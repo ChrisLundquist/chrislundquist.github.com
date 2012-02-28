@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>Night[9]</title>
+ <link href="http://chrislundquist.github.com/atom.xml" rel="self"/>
+ <link href="http://chrislundquist.github.com"/>
+ <updated>2012-02-27T23:44:11-08:00</updated>
+ <id>http://chrislundquist.github.com</id>
+ <author>
+   <name>Chris Lundquist</name>
+   <email>ChrisMLundquist@gmail.com</email>
+ </author>
+
+ 
+ <entry>
+   <title>Panic Fire. How to Recognize it and keep your coworkers from going postal</title>
+   <link href="http://chrislundquist.github.com/Development/2012/02/27/panic-fire-how-to-recognize-it-and-keep-your-coworkers-from-going-postal"/>
+   <updated>2012-02-27T00:00:00-08:00</updated>
+   <id>hhttp://chrislundquist.github.com/Development/2012/02/27/panic-fire-how-to-recognize-it-and-keep-your-coworkers-from-going-postal</id>
+   <content type="html"></content>
+ </entry>
+ 
+ 
+</feed>
