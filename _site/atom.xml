@@ -4,7 +4,7 @@
  <title>Night[9]</title>
  <link href="http://chrislundquist.github.com/atom.xml" rel="self"/>
  <link href="http://chrislundquist.github.com"/>
- <updated>2012-02-28T01:08:20-08:00</updated>
+ <updated>2012-02-29T00:56:11-08:00</updated>
  <id>http://chrislundquist.github.com</id>
  <author>
    <name>Chris Lundquist</name>
@@ -13,11 +13,33 @@
 
  
  <entry>
+   <title>Faking it</title>
+   <link href="http://chrislundquist.github.com/Development/2012/02/28/faking-it"/>
+   <updated>2012-02-28T00:00:00-08:00</updated>
+   <id>hhttp://chrislundquist.github.com/Development/2012/02/28/faking-it</id>
+   <content type="html">&lt;p&gt;&lt;em&gt;Faking it is the opposite of mastery. Faking it is learning (hopefully)&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id='what_it_is'&gt;What it is&lt;/h3&gt;
+
+&lt;p&gt;Sometimes you find yourself learning a new framework, tool, or language. Usually the first while is spent reading, and trying to gain some clarity. Eventually you gain enough confidence to try to do your task, but expressing what you mean to the new tool can be difficult. Often you will &lt;em&gt;copy paste a similar section&lt;/em&gt; to what you want, using it as a template. Then you substitute your needs into the template, along the way fixing the minor errors that crop of from this process. Always with a clear goal, and gaining a little insight each time.&lt;/p&gt;
+
+&lt;p&gt;Another common method is &lt;em&gt;to pattern after a familiar language&lt;/em&gt;. This is usually a better strategy, because it means you have more confidence in what you are actually doing. For example, when I was learning Java, patterning things after C++ let me cover more ground quickly. Since the syntax is so close, this can be a valid strategy, and even indicates a higher level of mastery than that of copy pasting a template and having at it.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Faking is not a bad thing. It is a great way to dive in and start to learn&lt;/em&gt;, it only becomes a problem when faking it becomes a crutch.&lt;/p&gt;
+
+&lt;h3 id='how_to_tell_when_when_you_really_mean_it'&gt;How to tell when when you really mean it&lt;/h3&gt;
+
+&lt;p&gt;Usually you can tell when you aren&amp;#8217;t faking it when you stop copy pasting from examples or when you aren&amp;#8217;t switching tabs constantly to copy someone else&amp;#8217;s code. There will always be times when you need a reference by running a quick search. This is distinctly different from switching back and forth between tabs or copy pasting large swaths of code.&lt;/p&gt;
+
+&lt;p&gt;Most of all, mastery is apparent when you can &lt;em&gt;express your goal in a clear and succinct manor&lt;/em&gt; to or in your given tool or language, without needing a reference.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
    <title>Panic Fire. How to recognize it and keep your coworkers from going postal</title>
    <link href="http://chrislundquist.github.com/Development/2012/02/27/panic-fire-how-to-recognize-it-and-keep-your-coworkers-from-going-postal"/>
    <updated>2012-02-27T00:00:00-08:00</updated>
    <id>hhttp://chrislundquist.github.com/Development/2012/02/27/panic-fire-how-to-recognize-it-and-keep-your-coworkers-from-going-postal</id>
-   <content type="html">&lt;p&gt;So maybe you have found yourself or seen someone else in a sitatuation like this.&lt;/p&gt;
+   <content type="html">&lt;p&gt;So maybe you have found yourself or seen someone else in a situation like this.&lt;/p&gt;
 
 &lt;p&gt;You are working on a project, without the time to get to know all the pieces. You are almost finished, there are just a few lines of code standing between you and getting lunch. There is just this one error you are stuck with. You try changing the problem line and get a wildly different error. Quickly, you change it again, to get another new error. You modify a few lines above with haste, hoping to stop the issue below, but that instead breaks in yet another new and interesting way.&lt;/p&gt;
 

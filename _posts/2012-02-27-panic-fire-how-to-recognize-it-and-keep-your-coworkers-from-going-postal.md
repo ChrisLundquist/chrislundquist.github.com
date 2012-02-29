@@ -2,12 +2,12 @@
 layout: post
 title: "Panic Fire. How to recognize it and keep your coworkers from going postal"
 category: Development
-tags: [Stress, Bad Habbits]
+tags: [Stress, Bad Habits]
 ---
 {% include JB/setup %}
 
 
-So maybe you have found yourself or seen someone else in a sitatuation like this.
+So maybe you have found yourself or seen someone else in a situation like this.
 
   You are working on a project, without the time to get to know all the pieces.
 You are almost finished, there are just a few lines of code standing between
