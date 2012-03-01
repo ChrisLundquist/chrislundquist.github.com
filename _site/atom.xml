@@ -4,13 +4,53 @@
  <title>Night[9]</title>
  <link href="http://chrislundquist.github.com/atom.xml" rel="self"/>
  <link href="http://chrislundquist.github.com"/>
- <updated>2012-02-29T00:56:11-08:00</updated>
+ <updated>2012-03-01T01:32:25-08:00</updated>
  <id>http://chrislundquist.github.com</id>
  <author>
    <name>Chris Lundquist</name>
    <email>ChrisMLundquist@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Small steps</title>
+   <link href="http://chrislundquist.github.com/Development/2012/02/29/small-steps"/>
+   <updated>2012-02-29T00:00:00-08:00</updated>
+   <id>hhttp://chrislundquist.github.com/Development/2012/02/29/small-steps</id>
+   <content type="html">&lt;p&gt;&lt;em&gt;Premature optimization and extension can cause many more problems than gains.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;It is often the case where we try to extend or improve things before that are complete. This usually leads to the manifestation of many bugs. The root cause of this is &lt;em&gt;taking too many or too large of steps at a time&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;One way to tell when this is happening, is when you start writing many different functions at a time, but aren&amp;#8217;t able to finish any of them. My strategy here is to find the separation of concerns and establish the minimum amount of work I need to do to accomplish this step. The three C&amp;#8217;s of computer science can be an excellent guide.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Correctness&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Having a ugly function that works correctly, is better than a shorter one that has bugs.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Completeness&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;If you don&amp;#8217;t account for half of your cases, then it is an obvious bug.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Compactness&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;It is a fairly common saying, something isn&amp;#8217;t done when there is nothing left to add. It is done when there is nothing left to take away.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The order of these guidelines is very important. You first need to do something correctly before it is time to extend it all the way. Likewise, an empty function is very compact, but not complete.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Faking it</title>
