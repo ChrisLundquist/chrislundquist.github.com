@@ -4,13 +4,39 @@
  <title>Night[9]</title>
  <link href="http://chrislundquist.github.com/atom.xml" rel="self"/>
  <link href="http://chrislundquist.github.com"/>
- <updated>2012-03-01T01:32:25-08:00</updated>
+ <updated>2012-03-01T22:52:57-08:00</updated>
  <id>http://chrislundquist.github.com</id>
  <author>
    <name>Chris Lundquist</name>
    <email>ChrisMLundquist@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>March Challenge</title>
+   <link href="http://chrislundquist.github.com/2012/03/01/march-challenge"/>
+   <updated>2012-03-01T00:00:00-08:00</updated>
+   <id>hhttp://chrislundquist.github.com/2012/03/01/march-challenge</id>
+   <content type="html">&lt;h2 id='big_ideas'&gt;Big Ideas&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Create an Open source load balancing API&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Basically a wrapper around HA proxy and your application that needs it.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Write a WebGL graphing library.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Seems like the barrier to use WebGL could be lower.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Write a binary gem building system.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In reference to Katz&amp;#8217;s speech at Ruby on Ales.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Small steps</title>
