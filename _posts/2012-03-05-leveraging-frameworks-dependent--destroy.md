@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Leveraging Frameworks: dependent => :destroy"
-category:
+category: Rails Development
 tags: [Code, Rails]
 ---
 {% include JB/setup %}

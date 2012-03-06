@@ -4,7 +4,7 @@
  <title>Night[9]</title>
  <link href="http://chrislundquist.github.com/atom.xml" rel="self"/>
  <link href="http://chrislundquist.github.com"/>
- <updated>2012-03-05T18:39:16-08:00</updated>
+ <updated>2012-03-05T18:42:08-08:00</updated>
  <id>http://chrislundquist.github.com</id>
  <author>
    <name>Chris Lundquist</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Leveraging Frameworks: dependent => :destroy</title>
-   <link href="http://chrislundquist.github.com/2012/03/05/leveraging-frameworks-dependent--destroy"/>
+   <link href="http://chrislundquist.github.com/Rails Development/2012/03/05/leveraging-frameworks-dependent--destroy"/>
    <updated>2012-03-05T00:00:00-08:00</updated>
-   <id>hhttp://chrislundquist.github.com/2012/03/05/leveraging-frameworks-dependent--destroy</id>
+   <id>hhttp://chrislundquist.github.com/Rails Development/2012/03/05/leveraging-frameworks-dependent--destroy</id>
    <content type="html">&lt;p&gt;Maybe you have some code like&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;model Foo &amp;lt; ActiveRecord::Base
@@ -40,9 +40,9 @@ end&lt;/code&gt;&lt;/pre&gt;
  
  <entry>
    <title>March Challenge</title>
-   <link href="http://chrislundquist.github.com/2012/03/01/march-challenge"/>
+   <link href="http://chrislundquist.github.com/Challenges/2012/03/01/march-challenge"/>
    <updated>2012-03-01T00:00:00-08:00</updated>
-   <id>hhttp://chrislundquist.github.com/2012/03/01/march-challenge</id>
+   <id>hhttp://chrislundquist.github.com/Challenges/2012/03/01/march-challenge</id>
    <content type="html">&lt;h2 id='big_ideas'&gt;Big Ideas&lt;/h2&gt;
 
 &lt;ol&gt;

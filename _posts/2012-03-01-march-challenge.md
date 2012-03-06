@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "March Challenge"
-category:
+category: Challenges
 tags: [Challenge, Ideas]
 ---
 {% include JB/setup %}
