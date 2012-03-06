@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>March Challenge <small> Be A Better Coder </small> </title>
+    <title>Leveraging Frameworks: dependent => :destroy <small> Be A Better Coder </small> </title>
     
     <meta name="author" content="Chris Lundquist">
 
@@ -79,39 +79,39 @@
       <div class="content">
         
 <div class="page-header">
-    <h1>March Challenge <small>Be A Better Coder</small></h1>
+    <h1>Leveraging Frameworks: dependent => :destroy <small>Be A Better Coder</small></h1>
 </div>
 
 <div class="row">
   <div class="span10">
-    <h2 id='big_ideas'>Big Ideas</h2>
+    <p>Maybe you have some code like</p>
 
-<ol>
-<li><strong>Create an Open source load balancing API</strong></li>
-</ol>
+<pre><code>model Foo &lt; ActiveRecord::Base
+    has_many :bars
+    before_destroy :clean_up_bars
 
-<p>Basically a wrapper around HA proxy and your application that needs it.</p>
+    def clean_up_bars
+       self.bars.destroy_all
+    end
+end</code></pre>
 
-<ol>
-<li><strong>Write a WebGL graphing library.</strong></li>
-</ol>
+<p>My main gripe with this, is that Rails provides an awesome way to clean up any thing that doesn&#8217;t make sense without a parent. Fortunately it is even super simple.</p>
 
-<p>Seems like the barrier to use WebGL could be lower.</p>
+<pre><code>model Foo &lt; ActiveRecord::Base
+    has_many :bars
+    before_destroy :clean_up_bars, :dependent =&gt; :destroy
+end</code></pre>
 
-<ol>
-<li><strong>Write a binary gem building system.</strong></li>
-</ol>
-
-<p>In reference to Katz&#8217;s speech at Ruby on Ales.</p>
+<p>This will make it so that when your Foo instance is destroyed, it will also destroy each of the bars that belong to that Foo instance.</p>
     <hr>
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/Development/2012/02/29/small-steps" title="Small steps">&larr; Previous</a></li>
+        <li class="prev"><a href="/2012/03/01/march-challenge" title="March Challenge">&larr; Previous</a></li>
       
         <li><a href="/archive.html">Archive</a></li>
       
-        <li class="next"><a href="/2012/03/05/leveraging-frameworks-dependent--destroy" title="Leveraging Frameworks: dependent => :destroy">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a>
       
       </ul>
     </div>
@@ -140,7 +140,7 @@
 
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>01 March 2012</span></div>
+    <div class="date"><span>05 March 2012</span></div>
 
   
     <h4>Tags</h4>
@@ -151,9 +151,9 @@
 
   
      
-    	<li><a href="/tags.html#Challenge-ref">Challenge <span>1</span></a></li>
+    	<li><a href="/tags.html#Code-ref">Code <span>1</span></a></li>
      
-    	<li><a href="/tags.html#Ideas-ref">Ideas <span>1</span></a></li>
+    	<li><a href="/tags.html#Rails-ref">Rails <span>1</span></a></li>
     
   
 

@@ -4,13 +4,39 @@
  <title>Night[9]</title>
  <link href="http://chrislundquist.github.com/atom.xml" rel="self"/>
  <link href="http://chrislundquist.github.com"/>
- <updated>2012-03-01T22:52:57-08:00</updated>
+ <updated>2012-03-05T18:39:16-08:00</updated>
  <id>http://chrislundquist.github.com</id>
  <author>
    <name>Chris Lundquist</name>
    <email>ChrisMLundquist@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Leveraging Frameworks: dependent => :destroy</title>
+   <link href="http://chrislundquist.github.com/2012/03/05/leveraging-frameworks-dependent--destroy"/>
+   <updated>2012-03-05T00:00:00-08:00</updated>
+   <id>hhttp://chrislundquist.github.com/2012/03/05/leveraging-frameworks-dependent--destroy</id>
+   <content type="html">&lt;p&gt;Maybe you have some code like&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;model Foo &amp;lt; ActiveRecord::Base
+    has_many :bars
+    before_destroy :clean_up_bars
+
+    def clean_up_bars
+       self.bars.destroy_all
+    end
+end&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;My main gripe with this, is that Rails provides an awesome way to clean up any thing that doesn&amp;#8217;t make sense without a parent. Fortunately it is even super simple.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;model Foo &amp;lt; ActiveRecord::Base
+    has_many :bars
+    before_destroy :clean_up_bars, :dependent =&amp;gt; :destroy
+end&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will make it so that when your Foo instance is destroyed, it will also destroy each of the bars that belong to that Foo instance.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>March Challenge</title>
