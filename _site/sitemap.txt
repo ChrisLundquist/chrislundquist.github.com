@@ -6,6 +6,7 @@ http://chrislundquist.github.com/pages.html
 http://chrislundquist.github.com/sitemap.txt
 http://chrislundquist.github.com/tags.html
 
+http://chrislundquist.github.com/Video Encoding/2012/03/05/video-encoding-terminology
 http://chrislundquist.github.com/Rails Development/2012/03/05/leveraging-frameworks-dependent--destroy
 http://chrislundquist.github.com/Challenges/2012/03/01/march-challenge
 http://chrislundquist.github.com/Development/2012/02/29/small-steps

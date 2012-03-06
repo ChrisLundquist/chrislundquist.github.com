@@ -4,13 +4,21 @@
  <title>Night[9]</title>
  <link href="http://chrislundquist.github.com/atom.xml" rel="self"/>
  <link href="http://chrislundquist.github.com"/>
- <updated>2012-03-05T18:42:08-08:00</updated>
+ <updated>2012-03-05T18:46:05-08:00</updated>
  <id>http://chrislundquist.github.com</id>
  <author>
    <name>Chris Lundquist</name>
    <email>ChrisMLundquist@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Video Encoding Terminology</title>
+   <link href="http://chrislundquist.github.com/Video Encoding/2012/03/05/video-encoding-terminology"/>
+   <updated>2012-03-05T00:00:00-08:00</updated>
+   <id>hhttp://chrislundquist.github.com/Video Encoding/2012/03/05/video-encoding-terminology</id>
+   <content type="html">&lt;p&gt;MB - Macro Block, a group of pixels, often square usually between 16 x 16 and 4 x 4, some encoders allow 8 x 4 and the like.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Leveraging Frameworks: dependent => :destroy</title>
