@@ -4,13 +4,95 @@
  <title>Night[9]</title>
  <link href="http://chrislundquist.github.com/atom.xml" rel="self"/>
  <link href="http://chrislundquist.github.com"/>
- <updated>2012-03-05T18:46:05-08:00</updated>
+ <updated>2012-04-26T14:12:18-07:00</updated>
  <id>http://chrislundquist.github.com</id>
  <author>
    <name>Chris Lundquist</name>
    <email>ChrisMLundquist@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Railsconf 2012 Take Away (Day 2)</title>
+   <link href="http://chrislundquist.github.com/Railsconf/2012/04/24/Railsconf-2012-Take-Away"/>
+   <updated>2012-04-24T00:00:00-07:00</updated>
+   <id>hhttp://chrislundquist.github.com/Railsconf/2012/04/24/Railsconf-2012-Take-Away</id>
+   <content type="html">&lt;h2 id='keynote_by_aaron_patterson'&gt;Keynote by Aaron Patterson&lt;/h2&gt;
+
+&lt;p&gt;He said we fail at everything, explained why people are scared of change and &amp;#8220;mature&amp;#8221; programmers have gotten that way for a reason.A Said we need an interface for everything. Most specifically for Queues like Rabbit, Zero, Sidekick, etc.&lt;/p&gt;
+
+&lt;h2 id='taming_the_kraken_by_nathen_harvey_from_customink'&gt;Taming The Kraken by Nathen Harvey from CustomInk&lt;/h2&gt;
+
+&lt;p&gt;They used Vagrant and chef and wrote the contiki project we did for a year.&lt;/p&gt;
+
+&lt;h2 id='sustainable_productivity_with_rails_by_xavier_shay_from_square'&gt;Sustainable Productivity with Rails by Xavier Shay from Square&lt;/h2&gt;
+
+&lt;p&gt;He talked about what I understand hexagonal architecture to be. Things like having one point of external dependency. Using tools like his implementation of Cane and the like to find code smell via scripts and applications.&lt;/p&gt;
+
+&lt;h2 id='lets_make_the_web_faster_by_ilya_grigorik_from_google'&gt;Lets Make the Web Faster by Ilya Grigorik from Google&lt;/h2&gt;
+
+&lt;p&gt;Demoed tools in chrome to see what takes so long with websites.&lt;/p&gt;
+
+&lt;p&gt;The average web page takes 10 seconds to completely load.&lt;/p&gt;
+
+&lt;p&gt;The average web page loads 84 resources.&lt;/p&gt;
+
+&lt;p&gt;Talked about optimizing the rest of the stack, not just that one slow sql query.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Railsconf 2012 Take Away (Day 1)</title>
+   <link href="http://chrislundquist.github.com/Railsconf/2012/04/23/Railsconf-2012-Take-Away"/>
+   <updated>2012-04-23T00:00:00-07:00</updated>
+   <id>hhttp://chrislundquist.github.com/Railsconf/2012/04/23/Railsconf-2012-Take-Away</id>
+   <content type="html">&lt;h2 id='dhh_keynote'&gt;DHH keynote&lt;/h2&gt;
+
+&lt;p&gt;DDH warns us about thinking old and being risk adverse.&lt;/p&gt;
+
+&lt;p&gt;says fuck 18 times.&lt;/p&gt;
+
+&lt;p&gt;Humorous and enjoyable talk overall.&lt;/p&gt;
+
+&lt;h2 id='designing_hypermedia_apis_by_steve_klabnik'&gt;Designing HyperMedia APIs by Steve Klabnik&lt;/h2&gt;
+
+&lt;p&gt;Rails REST is not the same as the original white paper REST.&lt;/p&gt;
+
+&lt;p&gt;Use the JSON response to render the GUI.&lt;/p&gt;
+
+&lt;p&gt;Return links in your JSON&lt;/p&gt;
+
+&lt;p&gt;good talk overall. He plays starcraft 2 and watches Day 9&lt;/p&gt;
+
+&lt;h2 id='practical_machine_learning_by_cantino_and_stout'&gt;Practical Machine Learning by Cantino and Stout&lt;/h2&gt;
+
+&lt;p&gt;Overview of machine learning.&lt;/p&gt;
+
+&lt;p&gt;effective techniques overview.&lt;/p&gt;
+
+&lt;p&gt;You could see if people are happy or upset based on emoticons in twitter messages.&lt;/p&gt;
+
+&lt;h2 id='rails_engines_by_andy_maleh_groupon'&gt;Rails Engines by Andy Maleh (Groupon)&lt;/h2&gt;
+
+&lt;p&gt;In one sentence, use inheritance techniques with engines as you would with models or what not.&lt;/p&gt;
+
+&lt;p&gt;Detailed concrete practice learnings.&lt;/p&gt;
+
+&lt;p&gt;Talk would have been better using the intro of Ryan Bigg&lt;/p&gt;
+
+&lt;h2 id='roomba_on_rails_by_charles_abbot_tail_end'&gt;Roomba on Rails by Charles Abbot (tail end)&lt;/h2&gt;
+
+&lt;p&gt;Played the emperor&amp;#8217;s march via midi on the roomba.&lt;/p&gt;
+
+&lt;h2 id='use_the_source_luke_with_data_sourcing_events_by_keith_gaddis'&gt;Use the Source Luke with Data Sourcing Events by Keith Gaddis&lt;/h2&gt;
+
+&lt;p&gt;Basically he said make your database like Git and store the events that lead to the changes.&lt;/p&gt;
+
+&lt;p&gt;Easier said than done, but it lets you replay events.&lt;/p&gt;
+
+&lt;p&gt;NOTE your actions must be deterministic&lt;/p&gt;
+
+&lt;p&gt;(CL) This is how starcraft 2 does replays. a SQL database of events&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Video Encoding Terminology</title>
