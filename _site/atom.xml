@@ -4,7 +4,7 @@
  <title>Night[9]</title>
  <link href="http://chrislundquist.github.com/atom.xml" rel="self"/>
  <link href="http://chrislundquist.github.com"/>
- <updated>2012-04-26T17:07:17-07:00</updated>
+ <updated>2012-04-26T17:09:45-07:00</updated>
  <id>http://chrislundquist.github.com</id>
  <author>
    <name>Chris Lundquist</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Railsconf 2012 Take Away (Day 3)</title>
-   <link href="http://chrislundquist.github.com/Railsconf/2012/04/25/Railsconf-2012-Take-away-day-3"/>
+   <link href="http://chrislundquist.github.com/Railsconf/2012/04/25/Railsconf-2012-Take-Away"/>
    <updated>2012-04-25T00:00:00-07:00</updated>
-   <id>hhttp://chrislundquist.github.com/Railsconf/2012/04/25/Railsconf-2012-Take-away-day-3</id>
+   <id>hhttp://chrislundquist.github.com/Railsconf/2012/04/25/Railsconf-2012-Take-Away</id>
    <content type="html">&lt;h2 id='rails_the_next_five_years_by_yehuda_katz_from_tilde'&gt;Rails: The Next Five Years by Yehuda Katz from Tilde&lt;/h2&gt;
 
 &lt;p&gt;The talk was focused on rails needs to go in a more JSON direction using serializers and presenters.&lt;/p&gt;
