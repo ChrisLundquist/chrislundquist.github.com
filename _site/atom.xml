@@ -4,13 +4,51 @@
  <title>Night[9]</title>
  <link href="http://chrislundquist.github.com/atom.xml" rel="self"/>
  <link href="http://chrislundquist.github.com"/>
- <updated>2012-04-26T14:12:18-07:00</updated>
+ <updated>2012-04-26T17:05:24-07:00</updated>
  <id>http://chrislundquist.github.com</id>
  <author>
    <name>Chris Lundquist</name>
    <email>ChrisMLundquist@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Railsconf 2012 Take Away (Day 3)</title>
+   <link href="http://chrislundquist.github.com/Railsconf/2012/04/25/Railsconf-2012-Take-away-day-3"/>
+   <updated>2012-04-25T00:00:00-07:00</updated>
+   <id>hhttp://chrislundquist.github.com/Railsconf/2012/04/25/Railsconf-2012-Take-away-day-3</id>
+   <content type="html">&lt;h2 id='rails_the_next_five_years_by_yehuda_katz_from_tilde'&gt;Rails: The Next Five Years by Yehuda Katz from Tilde&lt;/h2&gt;
+
+&lt;p&gt;The talk was focused on rails needs to go in a more JSON direction using serializers and presenters.&lt;/p&gt;
+
+&lt;p&gt;He exemplified a few techniques to make rails work cleanly with ember. He referenced Steven Klabnik&amp;#8217;s talk.&lt;/p&gt;
+
+&lt;p&gt;He now has to convince people why rails is the right choice to do JSON heavy work.&lt;/p&gt;
+
+&lt;h2 id='what_a_long_strange_trip_it_has_been_by_ezra_zygmuntowicz'&gt;What a long Strange Trip it has been by Ezra Zygmuntowicz.&lt;/h2&gt;
+
+&lt;p&gt;Ezra details his history of 10 years working with Rails and Engine Yard. He then announced his new startup and transition to 3d Printing. He hopes to improve the tool chain to work with 3d printers to make it way more awesome.&lt;/p&gt;
+
+&lt;h2 id='lightning_talks'&gt;Lightning Talks&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;One about working asynchronously to be more efficient, E.G. Github&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;One about the interview gem.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Ryan Bigg clarifying good practices for engines.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Yehuda detailing his project about binary gems.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
  
  <entry>
    <title>Railsconf 2012 Take Away (Day 2)</title>
