@@ -4,7 +4,7 @@
  <title>Night[9]</title>
  <link href="http://chrislundquist.github.com/atom.xml" rel="self"/>
  <link href="http://chrislundquist.github.com"/>
- <updated>2012-04-26T17:05:24-07:00</updated>
+ <updated>2012-04-26T17:07:17-07:00</updated>
  <id>http://chrislundquist.github.com</id>
  <author>
    <name>Chris Lundquist</name>
@@ -109,7 +109,7 @@
 
 &lt;p&gt;You could see if people are happy or upset based on emoticons in twitter messages.&lt;/p&gt;
 
-&lt;h2 id='rails_engines_by_andy_maleh_groupon'&gt;Rails Engines by Andy Maleh (Groupon)&lt;/h2&gt;
+&lt;h2 id='rails_engines_by_andy_maleh_from_groupon'&gt;Rails Engines by Andy Maleh from Groupon&lt;/h2&gt;
 
 &lt;p&gt;In one sentence, use inheritance techniques with engines as you would with models or what not.&lt;/p&gt;
 

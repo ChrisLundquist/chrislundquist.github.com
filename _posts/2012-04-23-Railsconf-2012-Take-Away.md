@@ -34,7 +34,7 @@ effective techniques overview.
 You could see if people are happy or upset based on emoticons in twitter messages.
 
 
-## Rails Engines by Andy Maleh (Groupon)
+## Rails Engines by Andy Maleh from Groupon
 
 In one sentence, use inheritance techniques with engines as you would with models or what not.
 
