@@ -4,13 +4,85 @@
  <title>Night[9]</title>
  <link href="http://chrislundquist.github.com/atom.xml" rel="self"/>
  <link href="http://chrislundquist.github.com"/>
- <updated>2012-04-26T17:09:45-07:00</updated>
+ <updated>2012-05-22T14:56:54-07:00</updated>
  <id>http://chrislundquist.github.com</id>
  <author>
    <name>Chris Lundquist</name>
    <email>ChrisMLundquist@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Let's Talk About Data Types</title>
+   <link href="http://chrislundquist.github.com/Tutorials/2012/05/21/lets-talk-about-data"/>
+   <updated>2012-05-21T00:00:00-07:00</updated>
+   <id>hhttp://chrislundquist.github.com/Tutorials/2012/05/21/lets-talk-about-data</id>
+   <content type="html">&lt;h1 id='data_types'&gt;Data types&lt;/h1&gt;
+
+&lt;p&gt;let&amp;#8217;s talk about data.&lt;/p&gt;
+
+&lt;p&gt;Most data is really boils down to just a few types. There are strings, integers, and floats for the most part. Strings are, well, a string of characters or letters naturally. Integers are whole numbers. Floats are decimal numbers.&lt;/p&gt;
+
+&lt;h2 id='some_examples_of_strings'&gt;Some examples of strings.&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;#8221;&amp;#8221; an empty string&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&amp;#8221;a&amp;#8221; a simple string&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&amp;#8220;hello world&amp;#8221; my favorite string&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&amp;#8220;\n\t\e\d&amp;#8221; a string of special characters. newline, tab, escape, backspace&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id='some_examples_of_integers'&gt;Some examples of integers&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;2 a positive whole number&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;0 zero&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;-5 a negative number&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id='some_examples_of_floats'&gt;Some examples of Floats&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;123 some decimal&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;1415927 some of pi&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;-1.0 a negative number that is equal to the integer -1&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id='complex_data_types'&gt;Complex Data Types&lt;/h1&gt;
+
+&lt;p&gt;Sometimes there is a certain type of data we use over and over again. Usually when this happens we make some standard for it. Some examples like this are Timestamps, Regexp, Arrays, Hashes&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Railsconf 2012 Take Away (Day 3)</title>
