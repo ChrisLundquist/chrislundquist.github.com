@@ -4,13 +4,51 @@
  <title>Night[9]</title>
  <link href="http://chrislundquist.github.com/atom.xml" rel="self"/>
  <link href="http://chrislundquist.github.com"/>
- <updated>2012-05-22T14:56:54-07:00</updated>
+ <updated>2012-05-24T09:10:13-07:00</updated>
  <id>http://chrislundquist.github.com</id>
  <author>
    <name>Chris Lundquist</name>
    <email>ChrisMLundquist@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Everything You Were Never Told About Billing Code</title>
+   <link href="http://chrislundquist.github.com/Tutorial/2012/05/24/everything-you-were-never-told-about-billing-code"/>
+   <updated>2012-05-24T00:00:00-07:00</updated>
+   <id>hhttp://chrislundquist.github.com/Tutorial/2012/05/24/everything-you-were-never-told-about-billing-code</id>
+   <content type="html">&lt;p&gt;Most of these may seem fairly self evident when written here, but they are often easy to overlook when in the middle of coding.&lt;/p&gt;
+
+&lt;p&gt;The most important things about billing code are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Results are reproducible and consistent&lt;/li&gt;
+
+&lt;li&gt;Precision over Accuracy&lt;/li&gt;
+
+&lt;li&gt;Invoices always have sub items.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id='consistency_is_key'&gt;Consistency is key&lt;/h3&gt;
+
+&lt;p&gt;The most common issue I see is having the price of an object change at some point in the future, which in turn causes the amount of every invoice in the past to change with it. Sometimes this happens because of sales or promotions, but usually it goes unnoticed until there is an issue with the purchase, then a nightmare follows when records are misaligned. A wise coworker once told me a great secret to not piss people off. &amp;#8220;Don&amp;#8217;t fuck with people&amp;#8217;s money&amp;#8221;. Words worth their weight in gold so to speak.&lt;/p&gt;
+
+&lt;h3 id='precision_over_accuracy'&gt;Precision over Accuracy&lt;/h3&gt;
+
+&lt;p&gt;Precision means getting the same answer each time, even if it is not quite the right answer. People will not care how you choose to round tax and the like as long as it looks close enough. They will care when you tell them their bill is a slightly different number each time.&lt;/p&gt;
+
+&lt;p&gt;The greatest example I have of this is a particular bit of software known as masteringphysics.com . MasteringPhysics pretends to value precision by telling you to round using significant figures, and nagging you whenever you enter too many digits of precision. Invariably, as soon as you follow what they say the answer was supposed to be for the next question in the series, they give you the helpful, &amp;#8220;Your answer was close, but not quite right, check your rounding&amp;#8221; when you used their supplied answers opposed to your more exact answers.&lt;/p&gt;
+
+&lt;p&gt;At the other end of the spectrum I, having learned this lesson from masteringphysics.com, and with working with an invoice similar to a phone bill decided to add the length of each phone call using millisecond precision and round it at the end to get the most accurate answer. This however lead to problems when the customer decided we were adding a few seconds to their bill since the invoice only displayed length up to the second. So all the few extra milliseconds here and there were not shown on the invoice.&lt;/p&gt;
+
+&lt;p&gt;Worse yet, if you took any subset and added them you would get a different total than displayed on the invoice. Again due to using more precision than shown.&lt;/p&gt;
+
+&lt;h3 id='invoices_always_have_sub_items'&gt;Invoices Always Have Sub Items&lt;/h3&gt;
+
+&lt;p&gt;Your phone bill has records of each call. Your grocery bill has records of each item. I am unable to think of an invoice not in this format. More importantly they never have more than one layer of sub items. People don&amp;#8217;t want to resolve dependency trees. They just want to know what they were billed for and what credits they got.&lt;/p&gt;
+
+&lt;p&gt;The only exception there might be to this rule is the medical industry as there were talks given at RailsConf 2012 by a company that specialized in medical billing. Given that people are willing to pay someone else to bill for their services. It must be really painful to do.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Let's Talk About Data Types</title>

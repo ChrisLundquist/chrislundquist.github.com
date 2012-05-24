@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Everything You Were Never Told About Billing Code <small> Be A Better Coder </small> </title>
+    
+    <meta name="author" content="Chris Lundquist">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/css/1.4.0/bootstrap.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <a class="brand" href="/">Night[9]</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+  
+    
+    	
+    	<li><a href="/categories.html">Categories</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/index.html">Archive</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/pages.html">Pages</a></li>
+    	
+    
+  
+    
+  
+    
+    	
+    	<li><a href="/tags.html">Tags</a></li>
+    	
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+    <h1>Everything You Were Never Told About Billing Code <small>Be A Better Coder</small></h1>
+</div>
+
+<div class="row">
+  <div class="span10">
+    <p>Most of these may seem fairly self evident when written here, but they are often easy to overlook when in the middle of coding.</p>
+
+<p>The most important things about billing code are:</p>
+
+<ul>
+<li>Results are reproducible and consistent</li>
+
+<li>Precision over Accuracy</li>
+
+<li>Invoices always have sub items.</li>
+</ul>
+
+<h3 id='consistency_is_key'>Consistency is key</h3>
+
+<p>The most common issue I see is having the price of an object change at some point in the future, which in turn causes the amount of every invoice in the past to change with it. Sometimes this happens because of sales or promotions, but usually it goes unnoticed until there is an issue with the purchase, then a nightmare follows when records are misaligned. A wise coworker once told me a great secret to not piss people off. &#8220;Don&#8217;t fuck with people&#8217;s money&#8221;. Words worth their weight in gold so to speak.</p>
+
+<h3 id='precision_over_accuracy'>Precision over Accuracy</h3>
+
+<p>Precision means getting the same answer each time, even if it is not quite the right answer. People will not care how you choose to round tax and the like as long as it looks close enough. They will care when you tell them their bill is a slightly different number each time.</p>
+
+<p>The greatest example I have of this is a particular bit of software known as masteringphysics.com . MasteringPhysics pretends to value precision by telling you to round using significant figures, and nagging you whenever you enter too many digits of precision. Invariably, as soon as you follow what they say the answer was supposed to be for the next question in the series, they give you the helpful, &#8220;Your answer was close, but not quite right, check your rounding&#8221; when you used their supplied answers opposed to your more exact answers.</p>
+
+<p>At the other end of the spectrum I, having learned this lesson from masteringphysics.com, and with working with an invoice similar to a phone bill decided to add the length of each phone call using millisecond precision and round it at the end to get the most accurate answer. This however lead to problems when the customer decided we were adding a few seconds to their bill since the invoice only displayed length up to the second. So all the few extra milliseconds here and there were not shown on the invoice.</p>
+
+<p>Worse yet, if you took any subset and added them you would get a different total than displayed on the invoice. Again due to using more precision than shown.</p>
+
+<h3 id='invoices_always_have_sub_items'>Invoices Always Have Sub Items</h3>
+
+<p>Your phone bill has records of each call. Your grocery bill has records of each item. I am unable to think of an invoice not in this format. More importantly they never have more than one layer of sub items. People don&#8217;t want to resolve dependency trees. They just want to know what they were billed for and what credits they got.</p>
+
+<p>The only exception there might be to this rule is the medical industry as there were talks given at RailsConf 2012 by a company that specialized in medical billing. Given that people are willing to pay someone else to bill for their services. It must be really painful to do.</p>
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/Tutorials/2012/05/21/lets-talk-about-data" title="Let's Talk About Data Types">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'jekyllbootstrap'; // required: replace example with your forum shortname
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>24 May 2012</span></div>
+
+  
+  </div>
+</div>
+
+
+      </div>
+
+      <footer>
+        <p>&copy; Chris Lundquist 2012
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    
+  </body>
+</html>
+
