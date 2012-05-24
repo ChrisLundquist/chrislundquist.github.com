@@ -7,7 +7,7 @@ http://chrislundquist.github.com/sitemap.txt
 http://chrislundquist.github.com/tags.html
 
 http://chrislundquist.github.com/Tutorial/2012/05/24/everything-you-were-never-told-about-billing-code
-http://chrislundquist.github.com/Tutorials/2012/05/21/lets-talk-about-data
+http://chrislundquist.github.com/Tutorial/2012/05/21/lets-talk-about-data
 http://chrislundquist.github.com/Railsconf/2012/04/25/Railsconf-2012-Take-Away
 http://chrislundquist.github.com/Railsconf/2012/04/24/Railsconf-2012-Take-Away
 http://chrislundquist.github.com/Railsconf/2012/04/23/Railsconf-2012-Take-Away

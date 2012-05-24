@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Let's Talk About Data Types"
-category: Tutorials
+category: Tutorial
 tags: []
 ---
 {% include JB/setup %}

@@ -4,7 +4,7 @@
  <title>Night[9]</title>
  <link href="http://chrislundquist.github.com/atom.xml" rel="self"/>
  <link href="http://chrislundquist.github.com"/>
- <updated>2012-05-24T09:10:13-07:00</updated>
+ <updated>2012-05-24T09:12:13-07:00</updated>
  <id>http://chrislundquist.github.com</id>
  <author>
    <name>Chris Lundquist</name>
@@ -52,9 +52,9 @@
  
  <entry>
    <title>Let's Talk About Data Types</title>
-   <link href="http://chrislundquist.github.com/Tutorials/2012/05/21/lets-talk-about-data"/>
+   <link href="http://chrislundquist.github.com/Tutorial/2012/05/21/lets-talk-about-data"/>
    <updated>2012-05-21T00:00:00-07:00</updated>
-   <id>hhttp://chrislundquist.github.com/Tutorials/2012/05/21/lets-talk-about-data</id>
+   <id>hhttp://chrislundquist.github.com/Tutorial/2012/05/21/lets-talk-about-data</id>
    <content type="html">&lt;h1 id='data_types'&gt;Data types&lt;/h1&gt;
 
 &lt;p&gt;let&amp;#8217;s talk about data.&lt;/p&gt;
