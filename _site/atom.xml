@@ -4,7 +4,7 @@
  <title>Night[9]</title>
  <link href="http://chrislundquist.github.com/atom.xml" rel="self"/>
  <link href="http://chrislundquist.github.com"/>
- <updated>2012-05-24T09:12:13-07:00</updated>
+ <updated>2012-05-24T09:13:14-07:00</updated>
  <id>http://chrislundquist.github.com</id>
  <author>
    <name>Chris Lundquist</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Everything You Were Never Told About Billing Code</title>
-   <link href="http://chrislundquist.github.com/Tutorial/2012/05/24/everything-you-were-never-told-about-billing-code"/>
+   <link href="http://chrislundquist.github.com/Development/2012/05/24/everything-you-were-never-told-about-billing-code"/>
    <updated>2012-05-24T00:00:00-07:00</updated>
-   <id>hhttp://chrislundquist.github.com/Tutorial/2012/05/24/everything-you-were-never-told-about-billing-code</id>
+   <id>hhttp://chrislundquist.github.com/Development/2012/05/24/everything-you-were-never-told-about-billing-code</id>
    <content type="html">&lt;p&gt;Most of these may seem fairly self evident when written here, but they are often easy to overlook when in the middle of coding.&lt;/p&gt;
 
 &lt;p&gt;The most important things about billing code are:&lt;/p&gt;

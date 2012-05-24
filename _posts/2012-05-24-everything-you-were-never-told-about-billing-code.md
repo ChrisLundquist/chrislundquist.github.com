@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Everything You Were Never Told About Billing Code"
-category: Tutorial
+category: Development
 tags: []
 ---
 {% include JB/setup %}
