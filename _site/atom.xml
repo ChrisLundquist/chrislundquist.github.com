@@ -4,13 +4,99 @@
  <title>Night[9]</title>
  <link href="http://chrislundquist.github.com/atom.xml" rel="self"/>
  <link href="http://chrislundquist.github.com"/>
- <updated>2012-05-24T09:13:14-07:00</updated>
+ <updated>2012-06-25T07:24:28-07:00</updated>
  <id>http://chrislundquist.github.com</id>
  <author>
    <name>Chris Lundquist</name>
    <email>ChrisMLundquist@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>everything you need to know to migrate from ree 1.8.7 to 1.9.3</title>
+   <link href="http://chrislundquist.github.com/Ruby On Rails/2012/06/25/everything-you-need-to-know-to-migrate-from-ree-187-to-193"/>
+   <updated>2012-06-25T00:00:00-07:00</updated>
+   <id>hhttp://chrislundquist.github.com/Ruby On Rails/2012/06/25/everything-you-need-to-know-to-migrate-from-ree-187-to-193</id>
+   <content type="html">&lt;h1 id='too_long_didnt_read'&gt;Too Long Didn&amp;#8217;t Read&lt;/h1&gt;
+
+&lt;p&gt;Most of your time will be spent updating gems to 1.9 versions then going through and replacing things like String#each with String#each_line&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;YAML use YAML::ENGINE.yamler = &amp;#8216;syck&amp;#8217;&lt;/li&gt;
+
+&lt;li&gt;Use stdlib where possible&lt;/li&gt;
+
+&lt;li&gt;UTF-8 encode everything&lt;/li&gt;
+
+&lt;li&gt;next instead of return is syntax error now instead of Segfault&lt;/li&gt;
+
+&lt;li&gt;Rspec tests ending in Group&lt;/li&gt;
+
+&lt;li&gt;Nil, True, False classes are frozen, can&amp;#8217;t dup them&lt;/li&gt;
+
+&lt;li&gt;&amp;#8220;when :&amp;#8221;, kill it&lt;/li&gt;
+
+&lt;li&gt;Rails 2.3.14 gotchya with 1.9.3 loading helpers&lt;/li&gt;
+
+&lt;li&gt;Range#include? -&amp;gt; Range#cover?&lt;/li&gt;
+
+&lt;li&gt;String#each -&amp;gt; String#each_line&lt;/li&gt;
+
+&lt;li&gt;Enumerable#choice -&amp;gt; Enumerable#sample&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id='marshalling_params_or_bigdecimal_with_yaml'&gt;Marshalling params or BigDecimal with YAML&lt;/h2&gt;
+
+&lt;p&gt;One of the more difficult things to track down was a bug in marshalling using the default serializer, yaml, and its default yamler.&lt;/p&gt;
+
+&lt;p&gt;The problem was that whenever you tried to to_yaml or Marshall#dump you got a big nasty error saying something like&lt;/p&gt;
+
+&lt;p&gt;&amp;#8220;example of BigDecimal wrong number arugments 2 for 0&amp;#8221;&lt;/p&gt;
+
+&lt;p&gt;Here was the fix I implemented in config/boot.rb &lt;pre&gt;
+ # FIXME remove the below hack when we at rails 3
+ # http://answerpot.com/showthread.php?2494452-Error+With+BigDecimal+To_yaml
+ # http://stackoverflow.com/questions/6530412/cant-define-singleton-method-encode-with-for-bigdecimal
+  if RUBY_VERSION.to_f == 1.9
+    require 'yaml'
+    YAML::ENGINE.yamler = 'syck'
+    # Set up gems listed in the Gemfile.
+    gemfile = File.expand_path('../../Gemfile', __FILE__)
+  end
+&lt;/pre&gt;&lt;/p&gt;
+
+&lt;h2 id='let_dead_gems_die_use_stdlib'&gt;Let Dead Gems Die, Use Stdlib&lt;/h2&gt;
+
+&lt;p&gt;We were using several gems that were old and designed for 1.8.x For the most part the fixes were going through and removing colons after when statements or adding the &lt;a href='www.example.com'&gt; magic UTF-8 encoding tag&lt;/a&gt;. However, one particularly nasty thing was the &lt;a href='www.example.com'&gt; ruby-aes-optimized&lt;/a&gt;. It broke in 1.9.x because string&lt;span&gt;n&lt;/span&gt; now returned a character &amp;#8220;A&amp;#8221; instead of the ascii value 65. It was also basically some C example implementation that was regexped into ruby. As such we found out later that it didn&amp;#8217;t quite agree with how OpenSSL did things. After talking about it briefly, we looked at &lt;a href='www.example.com'&gt; ruby-fast-aes &lt;/a&gt;, but saw that it only did weak encryption. We figured the best way to get this done would be to write ruby bindings to OpenSSL&amp;#8217;s implementation. Coincidentally, someone had done just that in the &lt;a href='www.example.com'&gt; Stdlib &lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id='systemtimer_its_dead_jim'&gt;SystemTimer, It&amp;#8217;s Dead Jim&lt;/h2&gt;
+
+&lt;p&gt;Because of how 1.8.7 used &lt;a href='www.example.com'&gt;Green threads&lt;/a&gt; you had to use a gem to gem real interrupts. In Ruby 1.9.x the theading model is changed so this is no longer required. You can now use &lt;a href='www.example.com'&gt; Timeout::timout(seconds) &lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id='ruby_193_and_rails_2314_includes_all_the_helpers'&gt;Ruby 1.9.3 and Rails 2.3.14 includes all the helpers!&lt;/h2&gt;
+
+&lt;p&gt;Another sticking point that almost made us stick with ruby 1.9.2 was that there is an issue with trying to load helpers for every controller when ApplicationController says helpers :all. I poked at it a few times but was focused on the 1.9.2 issues. Fortunately as soon as I was ready with 1.9.2 &lt;a href='www.example.com'&gt;Mr.Arko published just the fix&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id='next_instead_of_return_is_syntax_error_now_instead_of_segfault'&gt;next instead of return is syntax error now instead of Segfault&lt;/h2&gt;
+
+&lt;p&gt;Sometimes when refactoring code I have forgotten to remove a next or left in a return. In ree-1.8.7 this would cause a segfault when you reached the line. Now fortunately it will be a syntax error.&lt;/p&gt;
+
+&lt;h2 id='rspec_tests_ending_in_group'&gt;Rspec Tests Ending in Group&lt;/h2&gt;
+
+&lt;p&gt;We had a UserGroup model, so naturally we had user_group_spec.rb. In 1.8.7 this worked just fine. However in 1.9.x it tried to run it as a shared_behavior and blew up with some rather unhelpful stack trace. I ended up needing to look at the rspec source. I renamed the spec from describe UserGroup to describe User and that fixed it. ( I felt dirty so I wrapped it in a context ).I might hunt for a better solution later.&lt;/p&gt;
+
+&lt;h2 id='nil_true_false_classes_are_frozen'&gt;Nil, True, False classes are frozen&lt;/h2&gt;
+
+&lt;p&gt;This will only effect tests for the most part when you try to mock out nil objects. The easy fix is to mock one level lower too. Or create the data in a before / let block depending on what the data is.&lt;/p&gt;
+
+&lt;h2 id='method_changes'&gt;Method changes&lt;/h2&gt;
+
+&lt;p&gt;Range dropped include? for some reason and moved it to covers? it is important not to cast it to an array. Especially with time objects. Otherwise it will do a linear search through a giant array. &lt;em&gt;This change is not backwards compatible, you will have to switch on Ruby 1.9 / Ruby 1.8 and use the correct behavior&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;String#each -&amp;gt; String#each_line. On the plus side this guy is backwards compatible. I would guess the change was made because of the principal of least surprise. One might think String#each would yield characters.&lt;/p&gt;
+
+&lt;p&gt;Enumerable#choice -&amp;gt; Enumerable#sample. Both are only decent names. It returns a random element from the collection. &lt;em&gt;This change is not backwards compatible, you will have to switch on Ruby 1.9 / Ruby 1.8 and use the correct behavior&lt;/em&gt;&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Everything You Were Never Told About Billing Code</title>
