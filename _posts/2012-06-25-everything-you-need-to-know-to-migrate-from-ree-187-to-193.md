@@ -11,6 +11,7 @@ Most of your time will be spent updating gems to 1.9 versions then going through
 and replacing things like String#each with String#each_line
 * YAML use  YAML::ENGINE.yamler = 'syck'
 * Use stdlib where possible
+* Time#parse
 * UTF-8 encode everything
 * next instead of return is syntax error now instead of Segfault
 * Rspec tests ending in Group
@@ -61,6 +62,10 @@ quite agree with how OpenSSL did things. After talking about it briefly, we look
 but saw that it only did weak encryption. We figured the best way
 to get this done would be to write ruby bindings to OpenSSL's implementation.
 Coincidentally, someone had done just that in the <a href="www.example.com"> Stdlib </a>.
+
+## Time...
+In short...
+https://gist.github.com/873699
 
 ## SystemTimer, It's Dead Jim
 Because of how 1.8.7 used <a href="www.example.com">Green threads</a> you had to
