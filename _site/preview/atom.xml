@@ -4,83 +4,13 @@
  <title>Night[9]</title>
  <link href="http://chrislundquist.github.com/atom.xml" rel="self"/>
  <link href="http://chrislundquist.github.com"/>
- <updated>2012-07-06T00:00:24-07:00</updated>
+ <updated>2012-07-05T22:52:53-07:00</updated>
  <id>http://chrislundquist.github.com</id>
  <author>
    <name>Chris Lundquist</name>
    <email>ChrisMLundquist@gmail.com</email>
  </author>
 
- 
- <entry>
-   <title>an outside perspective on razor</title>
-   <link href="http://chrislundquist.github.com/2012/07/05/an-outside-perspective-on-razor"/>
-   <updated>2012-07-05T00:00:00-07:00</updated>
-   <id>hhttp://chrislundquist.github.com/2012/07/05/an-outside-perspective-on-razor</id>
-   <content type="html">&lt;h2 id='caveat'&gt;Caveat&lt;/h2&gt;
-
-&lt;p&gt;I have only spent a week going through this, so I am by no means an expert. Much of this I am piecing together and making educated guesses. If you have corrections, please let me know as I would love to improve my understanding.&lt;/p&gt;
-
-&lt;p&gt;Also note that Razor is a fast moving project and this will be quickly outdated. Think of it as alpha review. I can only hope all my gripes are untrue in six months.&lt;/p&gt;
-
-&lt;h2 id='overview'&gt;Overview&lt;/h2&gt;
-&lt;a href='https://github.com/puppetlabs/Razor'&gt; Project Razor &lt;/a&gt;
-&lt;p&gt;is a piece of software that aims to simplify bare metal server deployments to bring them up to speed with various virtual server platforms.&lt;/p&gt;
-
-&lt;h2 id='who_is_writing_razor'&gt;Who Is Writing Razor&lt;/h2&gt;
-
-&lt;p&gt;First let me start out saying that people working on razor are really great. They have spent a lot of time working on the project and solving issues. They certainly are responsive and even help when it &lt;a href='https://github.com/puppetlabs/Razor/issues/95'&gt; isn't even their problem&lt;/a&gt; I only wish &lt;a href='https://github.com/benburkert/razor-vagrant-demo/pull/5'&gt;other projects were as responsive&lt;/a&gt; As I understand it EMC and PuppetLabs are the key companies pushing Razor forward&lt;/p&gt;
-
-&lt;h2 id='what_razor_does'&gt;What Razor Does&lt;/h2&gt;
-
-&lt;p&gt;Razor is aimed to take bare metal and load it up with an operating system. It does this based on &amp;#8220;tags&amp;#8221; it generated from rules run over &lt;a href='http://projects.puppetlabs.com/projects/facter'&gt;facter&lt;/a&gt; data After that, razor says it will hand off to a &amp;#8220;broker&amp;#8221;, provisioning tool, such as Puppet or Chef. Currently it only supports Puppet as the project stems from PuppetLabs The internals are pretty complex, and we will take a look at them in a moment.&lt;/p&gt;
-
-&lt;h2 id='why_write_razor'&gt;Why Write Razor&lt;/h2&gt;
-
-&lt;p&gt;If you have ever loaded 20 machines remotely, you know the pain. It really doesn&amp;#8217;t scale. Even if you are using anaconda, PXE, and all that. Often you will have to KVM a machine to load it up. This just won&amp;#8217;t work anymore.&lt;/p&gt;
-
-&lt;h2 id='how_razor_works'&gt;How Razor Works&lt;/h2&gt;
-
-&lt;p&gt;Razor is split up into several pieces called &lt;a href='https://github.com/puppetlabs/Razor/wiki'&gt; slices &lt;/a&gt;. Razor&amp;#8217;s key slices at the moment are: image, model, policy, node, and broker.&lt;/p&gt;
-
-&lt;p&gt;Using these slices it wraps a PXE boot environment with a state machine keyed of mac addresses.&lt;/p&gt;
-
-&lt;p&gt;When a node, server, is brought up and receives a DHCP offer from Razor, Razor will set the next address to Razor&amp;#8217;s tftp server that will load &lt;a href='https://github.com/puppetlabs/Razor/downloads'&gt; microkernel &lt;/a&gt; on to the node / server. This will cause the server to run facter and submit output to Razor, which razor will then register this node and apply any tags. These tags usually show memory, cpu core count, network card count, virtual machine type or hardware vendor. I believe you can even make your own rules to generate tags.&lt;/p&gt;
-
-&lt;h3 id='image'&gt;&lt;em&gt;Image&lt;/em&gt;&lt;/h3&gt;
-
-&lt;p&gt;Razor basically keeps an unpacked ISO of whatever distribution(s) you are installing. Currently Razor likes to be in the middle of this, and (in my personal experience) dislikes net booting from remote resources. This is because doing so can easily break Razor&amp;#8217;s callback chain.&lt;/p&gt;
-
-&lt;p&gt;In short, an image is an unpacked ISO, given a UUID and some descriptions.&lt;/p&gt;
-
-&lt;h3 id='model'&gt;&lt;em&gt;Model&lt;/em&gt;&lt;/h3&gt;
-
-&lt;p&gt;A model is a shim as far as I can tell that provides a little more metadata on how to deploy an image. For instance is it virtual or physical, and things like that.&lt;/p&gt;
-
-&lt;h3 id='policy'&gt;&lt;em&gt;Policy&lt;/em&gt;&lt;/h3&gt;
-
-&lt;p&gt;A policy is how Razor assigns a model to a node from tags. Basically you will say, &amp;#8220;If a node has these tag(s) x,y,z, then use this model&amp;#8221;, Currently I believe it is first match wins.&lt;/p&gt;
-
-&lt;h3 id='node'&gt;&lt;em&gt;Node&lt;/em&gt;&lt;/h3&gt;
-
-&lt;p&gt;This is where the state of the server is kept. This will let Razor keep track of if the server. Keyed off mac address, this lets razor know if the host needs to be loaded, and what properties it has.&lt;/p&gt;
-
-&lt;h3 id='broker'&gt;&lt;em&gt;Broker&lt;/em&gt;&lt;/h3&gt;
-
-&lt;p&gt;A Broker is something that razor can hand off to like Chef or Puppet. Currently only Puppet is supported.&lt;/p&gt;
-
-&lt;h2 id='why_razor_doesnt_work_for_me'&gt;Why Razor Doesn&amp;#8217;t Work For Me&lt;/h2&gt;
-
-&lt;p&gt;For my use case at &lt;a href='Bluebox.net'&gt;Bluebox. &lt;/a&gt; Razor just don&amp;#8217;t feel like the right tool. It seems like it is trying to solve too many problems that Razor should delegate. Having a complete repository for every OS you might install is hard. Keeping a duplicate of it for Razor, since you might have custom packages in your own, is extra work. Maybe you can add your customized repositories later, but it is still one more bit of duplication.&lt;/p&gt;
-
-&lt;p&gt;Razor naturally is very Puppet centric. I have no problem with Puppet, I just learned Chef first. This was a great opportunity to learn a bit, and puppet has a few attractive features which I will explore. The promise of chef support feels tacked on at the moment.&lt;/p&gt;
-
-&lt;p&gt;Razor also feels like it is scratching an itch I just don&amp;#8217;t have. It has lots of support for the VMware universe that I know almost nothing about. Things like LXC, and XEN have planned support, but Razor doesn&amp;#8217;t seem like it is there yet.&lt;/p&gt;
-
-&lt;p&gt;Some of these things feel like they go against &amp;#8220;Occom&amp;#8217;s Razor&amp;#8221; as was the &lt;a href='http://nickapedia.com/2012/05/21/lex-parsimoniae-cloud-provisioning-with-a-razor/'&gt; stated inspiration &lt;/a&gt; for the name.&lt;/p&gt;
-
-&lt;p&gt;If your goal is &amp;#8220;to be like AWS, but with dedicated hardware&amp;#8221;, then these things are needed. Our goal was a little less ambitious. &amp;#8220;To load hardware, automatically, and intelligently&amp;#8221;. This just means we have to bring them up to an SSHable state.&lt;/p&gt;</content>
- </entry>
  
  <entry>
    <title>everything you need to know to migrate from ree 1.8.7 to 1.9.3</title>
@@ -139,7 +69,7 @@
 
 &lt;h2 id='let_dead_gems_die_use_stdlib'&gt;Let Dead Gems Die, Use Stdlib&lt;/h2&gt;
 
-&lt;p&gt;We were using several gems that were old and designed for 1.8.x For the most part the fixes were going through and removing colons after when statements or adding the &lt;a href='www.example.com'&gt; magic UTF-8 encoding tag&lt;/a&gt;. However, one particularly nasty thing was the &lt;a href='www.example.com'&gt; ruby-aes-optimized&lt;/a&gt;. It broke in 1.9.x because &amp;#8220;string&lt;span&gt;n&lt;/span&gt;&amp;#8221; now returned a character &amp;#8220;A&amp;#8221; instead of the ascii value 65. It was also basically some C example implementation that was regexped into ruby. As such we found out later that it didn&amp;#8217;t quite agree with how OpenSSL did things. After talking about it briefly, we looked at &lt;a href='www.example.com'&gt; ruby-fast-aes &lt;/a&gt;, but saw that it only did weak encryption. We figured the best way to get this done would be to write ruby bindings to OpenSSL&amp;#8217;s implementation. Coincidentally, someone had done just that in the &lt;a href='www.example.com'&gt; Stdlib &lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We were using several gems that were old and designed for 1.8.x For the most part the fixes were going through and removing colons after when statements or adding the &lt;a href='www.example.com'&gt; magic UTF-8 encoding tag&lt;/a&gt;. However, one particularly nasty thing was the &lt;a href='www.example.com'&gt; ruby-aes-optimized&lt;/a&gt;. It broke in 1.9.x because string&lt;span&gt;n&lt;/span&gt; now returned a character &amp;#8220;A&amp;#8221; instead of the ascii value 65. It was also basically some C example implementation that was regexped into ruby. As such we found out later that it didn&amp;#8217;t quite agree with how OpenSSL did things. After talking about it briefly, we looked at &lt;a href='www.example.com'&gt; ruby-fast-aes &lt;/a&gt;, but saw that it only did weak encryption. We figured the best way to get this done would be to write ruby bindings to OpenSSL&amp;#8217;s implementation. Coincidentally, someone had done just that in the &lt;a href='www.example.com'&gt; Stdlib &lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id='time'&gt;Time&amp;#8230;&lt;/h2&gt;
 

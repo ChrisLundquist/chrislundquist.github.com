@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>an outside perspective on razor <small> Be A Better Coder </small> </title>
+    
+    <meta name="author" content="Chris Lundquist">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/css/1.4.0/bootstrap.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <a class="brand" href="/">Night[9]</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+  
+    
+    	
+    	<li><a href="/categories.html">Categories</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/index.html">Archive</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/pages.html">Pages</a></li>
+    	
+    
+  
+    
+  
+    
+    	
+    	<li><a href="/tags.html">Tags</a></li>
+    	
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+    <h1>an outside perspective on razor <small>Be A Better Coder</small></h1>
+</div>
+
+<div class="row">
+  <div class="span10">
+    <h2 id='caveat'>Caveat</h2>
+
+<p>I have only spent a week going through this, so I am by no means an expert. Much of this I am piecing together and making educated guesses. If you have corrections, please let me know as I would love to improve my understanding.</p>
+
+<p>Also note that Razor is a fast moving project and this will be quickly outdated. Think of it as alpha review. I can only hope all my gripes are untrue in six months.</p>
+
+<h2 id='overview'>Overview</h2>
+<a href='https://github.com/puppetlabs/Razor'> Project Razor </a>
+<p>is a piece of software that aims to simplify bare metal server deployments to bring them up to speed with various virtual server platforms.</p>
+
+<h2 id='who_is_writing_razor'>Who Is Writing Razor</h2>
+
+<p>First let me start out saying that people working on razor are really great. They have spent a lot of time working on the project and solving issues. They certainly are responsive and even help when it <a href='https://github.com/puppetlabs/Razor/issues/95'> isn't even their problem</a> I only wish <a href='https://github.com/benburkert/razor-vagrant-demo/pull/5'>other projects were as responsive</a> As I understand it EMC and PuppetLabs are the key companies pushing Razor forward</p>
+
+<h2 id='what_razor_does'>What Razor Does</h2>
+
+<p>Razor is aimed to take bare metal and load it up with an operating system. It does this based on &#8220;tags&#8221; it generated from rules run over <a href='http://projects.puppetlabs.com/projects/facter'>facter</a> data After that, razor says it will hand off to a &#8220;broker&#8221;, provisioning tool, such as Puppet or Chef. Currently it only supports Puppet as the project stems from PuppetLabs The internals are pretty complex, and we will take a look at them in a moment.</p>
+
+<h2 id='why_write_razor'>Why Write Razor</h2>
+
+<p>If you have ever loaded 20 machines remotely, you know the pain. It really doesn&#8217;t scale. Even if you are using anaconda, PXE, and all that. Often you will have to KVM a machine to load it up. This just won&#8217;t work anymore.</p>
+
+<h2 id='how_razor_works'>How Razor Works</h2>
+
+<p>Razor is split up into several pieces called <a href='https://github.com/puppetlabs/Razor/wiki'> slices </a>. Razor&#8217;s key slices at the moment are: image, model, policy, node, and broker.</p>
+
+<p>Using these slices it wraps a PXE boot environment with a state machine keyed of mac addresses.</p>
+
+<p>When a node, server, is brought up and receives a DHCP offer from Razor, Razor will set the next address to Razor&#8217;s tftp server that will load <a href='https://github.com/puppetlabs/Razor/downloads'> microkernel </a> on to the node / server. This will cause the server to run facter and submit output to Razor, which razor will then register this node and apply any tags. These tags usually show memory, cpu core count, network card count, virtual machine type or hardware vendor. I believe you can even make your own rules to generate tags.</p>
+
+<h3 id='image'><em>Image</em></h3>
+
+<p>Razor basically keeps an unpacked ISO of whatever distribution(s) you are installing. Currently Razor likes to be in the middle of this, and (in my personal experience) dislikes net booting from remote resources. This is because doing so can easily break Razor&#8217;s callback chain.</p>
+
+<p>In short, an image is an unpacked ISO, given a UUID and some descriptions.</p>
+
+<h3 id='model'><em>Model</em></h3>
+
+<p>A model is a shim as far as I can tell that provides a little more metadata on how to deploy an image. For instance is it virtual or physical, and things like that.</p>
+
+<h3 id='policy'><em>Policy</em></h3>
+
+<p>A policy is how Razor assigns a model to a node from tags. Basically you will say, &#8220;If a node has these tag(s) x,y,z, then use this model&#8221;, Currently I believe it is first match wins.</p>
+
+<h3 id='node'><em>Node</em></h3>
+
+<p>This is where the state of the server is kept. This will let Razor keep track of if the server. Keyed off mac address, this lets razor know if the host needs to be loaded, and what properties it has.</p>
+
+<h3 id='broker'><em>Broker</em></h3>
+
+<p>A Broker is something that razor can hand off to like Chef or Puppet. Currently only Puppet is supported.</p>
+
+<h2 id='why_razor_doesnt_work_for_me'>Why Razor Doesn&#8217;t Work For Me</h2>
+
+<p>For my use case at <a href='Bluebox.net'>Bluebox. </a> Razor just don&#8217;t feel like the right tool. It seems like it is trying to solve too many problems that Razor should delegate. Having a complete repository for every OS you might install is hard. Keeping a duplicate of it for Razor, since you might have custom packages in your own, is extra work. Maybe you can add your customized repositories later, but it is still one more bit of duplication.</p>
+
+<p>Razor naturally is very Puppet centric. I have no problem with Puppet, I just learned Chef first. This was a great opportunity to learn a bit, and puppet has a few attractive features which I will explore. The promise of chef support feels tacked on at the moment.</p>
+
+<p>Razor also feels like it is scratching an itch I just don&#8217;t have. It has lots of support for the VMware universe that I know almost nothing about. Things like LXC, and XEN have planned support, but Razor doesn&#8217;t seem like it is there yet.</p>
+
+<p>Some of these things feel like they go against &#8220;Occom&#8217;s Razor&#8221; as was the <a href='http://nickapedia.com/2012/05/21/lex-parsimoniae-cloud-provisioning-with-a-razor/'> stated inspiration </a> for the name.</p>
+
+<p>If your goal is &#8220;to be like AWS, but with dedicated hardware&#8221;, then these things are needed. Our goal was a little less ambitious. &#8220;To load hardware, automatically, and intelligently&#8221;. This just means we have to bring them up to an SSHable state.</p>
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/Ruby On Rails/2012/06/25/everything-you-need-to-know-to-migrate-from-ree-187-to-193" title="everything you need to know to migrate from ree 1.8.7 to 1.9.3">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'jekyllbootstrap'; // required: replace example with your forum shortname
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>05 July 2012</span></div>
+
+  
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="/tags.html#razor-ref">razor <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#github-ref">github <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+  
+  </div>
+</div>
+
+
+      </div>
+
+      <footer>
+        <p>&copy; Chris Lundquist 2012
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    
+  </body>
+</html>
+

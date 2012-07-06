@@ -54,7 +54,7 @@ statements or adding the
 However, one particularly nasty
 thing was the
 <a href="www.example.com"> ruby-aes-optimized</a>.
-It broke in 1.9.x because string[n] now returned
+It broke in 1.9.x because "string[n]" now returned
 a character "A" instead of the ascii value 65. It was also basically some C example
 implementation that was regexped into ruby. As such we found out later that it didn't
 quite agree with how OpenSSL did things. After talking about it briefly, we looked at

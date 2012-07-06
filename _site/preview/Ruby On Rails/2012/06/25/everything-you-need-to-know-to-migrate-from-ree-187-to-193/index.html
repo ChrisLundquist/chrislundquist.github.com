@@ -136,7 +136,7 @@
 
 <h2 id='let_dead_gems_die_use_stdlib'>Let Dead Gems Die, Use Stdlib</h2>
 
-<p>We were using several gems that were old and designed for 1.8.x For the most part the fixes were going through and removing colons after when statements or adding the <a href='www.example.com'> magic UTF-8 encoding tag</a>. However, one particularly nasty thing was the <a href='www.example.com'> ruby-aes-optimized</a>. It broke in 1.9.x because &#8220;string<span>n</span>&#8221; now returned a character &#8220;A&#8221; instead of the ascii value 65. It was also basically some C example implementation that was regexped into ruby. As such we found out later that it didn&#8217;t quite agree with how OpenSSL did things. After talking about it briefly, we looked at <a href='www.example.com'> ruby-fast-aes </a>, but saw that it only did weak encryption. We figured the best way to get this done would be to write ruby bindings to OpenSSL&#8217;s implementation. Coincidentally, someone had done just that in the <a href='www.example.com'> Stdlib </a>.</p>
+<p>We were using several gems that were old and designed for 1.8.x For the most part the fixes were going through and removing colons after when statements or adding the <a href='www.example.com'> magic UTF-8 encoding tag</a>. However, one particularly nasty thing was the <a href='www.example.com'> ruby-aes-optimized</a>. It broke in 1.9.x because string<span>n</span> now returned a character &#8220;A&#8221; instead of the ascii value 65. It was also basically some C example implementation that was regexped into ruby. As such we found out later that it didn&#8217;t quite agree with how OpenSSL did things. After talking about it briefly, we looked at <a href='www.example.com'> ruby-fast-aes </a>, but saw that it only did weak encryption. We figured the best way to get this done would be to write ruby bindings to OpenSSL&#8217;s implementation. Coincidentally, someone had done just that in the <a href='www.example.com'> Stdlib </a>.</p>
 
 <h2 id='time'>Time&#8230;</h2>
 
@@ -177,7 +177,7 @@
       
         <li><a href="/archive.html">Archive</a></li>
       
-        <li class="next"><a href="/2012/07/05/an-outside-perspective-on-razor" title="an outside perspective on razor">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a>
       
       </ul>
     </div>
