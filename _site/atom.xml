@@ -4,13 +4,59 @@
  <title>Night[9]</title>
  <link href="http://chrislundquist.github.com/atom.xml" rel="self"/>
  <link href="http://chrislundquist.github.com"/>
- <updated>2012-07-06T00:00:24-07:00</updated>
+ <updated>2012-09-16T01:58:11-07:00</updated>
  <id>http://chrislundquist.github.com</id>
  <author>
    <name>Chris Lundquist</name>
    <email>ChrisMLundquist@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Setting up SSH to a Windows 7 virtual box</title>
+   <link href="http://chrislundquist.github.com/2012/09/16/SSH-Windows-7-Virtual-Box"/>
+   <updated>2012-09-16T00:00:00-07:00</updated>
+   <id>hhttp://chrislundquist.github.com/2012/09/16/SSH-Windows-7-Virtual-Box</id>
+   <content type="html">&lt;p&gt;I Learned these first steps from the most reliable source ever. For a step by step video. http://www.youtube.com/watch?v=HoSebbqBQQo&lt;/p&gt;
+
+&lt;p&gt;I found another guide while writing this that explains the second part http://www.howtogeek.com/howto/41560/how-to-get-ssh-command-line-access-to-windows-7-using-cygwin/&lt;/p&gt;
+
+&lt;h1 id='making_the_box'&gt;Making The Box&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Download VirtualBox ( https://www.virtualbox.org/wiki/Downloads )&lt;/li&gt;
+
+&lt;li&gt;Get an ISO of Windows 7 ( http://www.youtube.com/watch?v=HoSebbqBQQo )&lt;/li&gt;
+
+&lt;li&gt;In VirtualBox create a new machine after the Windows 7 Template.&lt;/li&gt;
+
+&lt;li&gt;Use ICH9 and Enable IO APIC, Otherwise the box segfaults on boot.&lt;/li&gt;
+
+&lt;li&gt;Mount the Windows 7 ISO as an IDE DVD drive. It will not detect it as SATA&lt;/li&gt;
+
+&lt;li&gt;Install windows 7&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id='getting_ssh_working'&gt;Getting SSH Working&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Download Cygwin ( http://cygwin.com/install.html )&lt;/li&gt;
+
+&lt;li&gt;Install OpenSSH via Cygwin&lt;/li&gt;
+
+&lt;li&gt;Run ssh-host-configas Adminstrator. This will make a new user account to run SSHd as a windows service.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id='getting_msvc_working'&gt;Getting MSVC working&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Download and install Visual Studio 2010&lt;/li&gt;
+
+&lt;li&gt;Source this shell script in your cygwin .bashrc https://gist.github.com/3717601&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Success&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>an outside perspective on razor</title>

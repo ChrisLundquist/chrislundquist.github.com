@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Panic Fire. How to recognize it and keep your coworkers from going postal <small> Be A Better Coder </small> </title>
+    <title>Setting up SSH to a Windows 7 virtual box <small> Be A Better Coder </small> </title>
     
     <meta name="author" content="Chris Lundquist">
 
@@ -79,55 +79,59 @@
       <div class="content">
         
 <div class="page-header">
-    <h1>Panic Fire. How to recognize it and keep your coworkers from going postal <small>Be A Better Coder</small></h1>
+    <h1>Setting up SSH to a Windows 7 virtual box <small>Be A Better Coder</small></h1>
 </div>
 
 <div class="row">
   <div class="span10">
-    <p>So maybe you have found yourself or seen someone else in a situation like this.</p>
+    <p>I Learned these first steps from the most reliable source ever. For a step by step video. http://www.youtube.com/watch?v=HoSebbqBQQo</p>
 
-<p>You are working on a project, without the time to get to know all the pieces. You are almost finished, there are just a few lines of code standing between you and getting lunch. There is just this one error you are stuck with. You try changing the problem line and get a wildly different error. Quickly, you change it again, to get another new error. You modify a few lines above with haste, hoping to stop the issue below, but that instead breaks in yet another new and interesting way.</p>
+<p>I found another guide while writing this that explains the second part http://www.howtogeek.com/howto/41560/how-to-get-ssh-command-line-access-to-windows-7-using-cygwin/</p>
 
-<p>This cycle continues, ever so slowly bringing you closer to your goal. Finally, after repeatedly and hastily running back in forth reactively pushing lines of code &#8220;back in place&#8221;. You have completed the goal. You pause for a moment and look back over your code, not quite sure why half of it is there. You just remember it fixed some error that cropped up from this other error over there&#8230; Actually you only have a vague idea how you accomplished this task. All you know is that it works now, some how.</p>
-
-<p><em>This is panic fire</em></p>
-
-<p>Next time you see yourself or someone you know in this situation here are some suggestions to help them break the cycle.</p>
+<h1 id='making_the_box'>Making The Box</h1>
 
 <ul>
-<li>Ask what they are trying to accomplish.</li>
+<li>Download VirtualBox ( https://www.virtualbox.org/wiki/Downloads )</li>
+
+<li>Get an ISO of Windows 7 ( http://www.youtube.com/watch?v=HoSebbqBQQo )</li>
+
+<li>In VirtualBox create a new machine after the Windows 7 Template.</li>
+
+<li>Use ICH9 and Enable IO APIC, Otherwise the box segfaults on boot.</li>
+
+<li>Mount the Windows 7 ISO as an IDE DVD drive. It will not detect it as SATA</li>
+
+<li>Install windows 7</li>
 </ul>
 
-<p>If they can&#8217;t say what they are trying to do in 20 words or less, they need to take smaller steps.</p>
+<h1 id='getting_ssh_working'>Getting SSH Working</h1>
 
 <ul>
-<li>Ask how they are going to accomplish the goal.</li>
+<li>Download Cygwin ( http://cygwin.com/install.html )</li>
+
+<li>Install OpenSSH via Cygwin</li>
+
+<li>Run ssh-host-configas Adminstrator. This will make a new user account to run SSHd as a windows service.</li>
 </ul>
 
-<p>If they don&#8217;t have a game plan in English, then it is really hard to express that plan in code. Even in a language as poetic as Ruby.</p>
+<h1 id='getting_msvc_working'>Getting MSVC working</h1>
 
 <ul>
-<li>Ask why making a change will bring them closer to their goal</li>
+<li>Download and install Visual Studio 2010</li>
+
+<li>Source this shell script in your cygwin .bashrc https://gist.github.com/3717601</li>
 </ul>
 
-<p>If they don&#8217;t know why they are doing something, it is time to get a reality check</p>
-
-<p>To summarize, ask:</p>
-
-<p><em>What are they doing</em></p>
-
-<p><em>How they are going to do it</em></p>
-
-<p><em>Why it will work</em></p>
+<p>Success</p>
     <hr>
     <div class="pagination">
       <ul>
       
-        <li class="prev disabled"><a>&larr; Previous</a></li>
+        <li class="prev"><a href="/2012/07/05/an-outside-perspective-on-razor" title="an outside perspective on razor">&larr; Previous</a></li>
       
         <li><a href="/archive.html">Archive</a></li>
       
-        <li class="next"><a href="/Development/2012/02/28/faking-it" title="Faking it">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a>
       
       </ul>
     </div>
@@ -156,26 +160,8 @@
 
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>27 February 2012</span></div>
+    <div class="date"><span>16 September 2012</span></div>
 
-  
-    <h4>Tags</h4>
-    <ul class="tag_box">
-    
-    
-
-
-  
-     
-    	<li><a href="/tags.html#Stress-ref">Stress <span>1</span></a></li>
-     
-    	<li><a href="/tags.html#Bad Habits-ref">Bad Habits <span>1</span></a></li>
-    
-  
-
-
-
-    </ul>
   
   </div>
 </div>
